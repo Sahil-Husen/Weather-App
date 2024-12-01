@@ -48,7 +48,7 @@ function App() {
 
   const fetchData = (coord) => {
     const { lat, lon } = coord;
-    const API_KEY = "d1845658f92b31c64bd94f06f7188c9c";
+    const API_KEY =import.meta.env.VITE_API_KEYI;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
     fetch(url)
@@ -116,14 +116,14 @@ function App() {
             </>
           ) : (
             // Default UI
-            <div className="flex flex-col items-center justify-center mt-1">
+            <div className="flex flex-col items-center justify-center mt-1 ">
                
               <img
                 src={logo}
                 alt="Cloud icon"
-                className="h-[150px] w-auto object-cover mt-10"
+                className="h-[150px] w-auto object-cover mt-10  "
               />
-              <p className="text-3xl font-extrabold font-medium text-white mt-2">
+              <p className="text-3xl font-medium  text-white mt-2">
                 <span className="text-5xl">25</span>&deg;C
               </p>
               <p className="text-white">Lucknow</p>

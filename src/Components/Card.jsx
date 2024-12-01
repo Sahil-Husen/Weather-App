@@ -76,22 +76,22 @@ function Card({ data }) {
             <div className="bg-[#488abe] w-[48%] p-2 shadow-lg flex flex-col justify-center items-center rounded-xl hover:bg-[#cee5dc] transition-all duration-250 ">
               <i className="text-3xl"></i>
               <h3 className="text-white font-semibold">
-                  {data.sys.sunrise}
+                  {data.main.temp_max}  &deg;C
               
               </h3>
               <p className="font-medium  text-[#0e2e46]">
-                 SunRise
+                 Max Temprature
                 {/* {data.main.feels_like}&deg;C */}
               </p>
             </div>
             <div className="bg-[#488abe] w-[48%] p-2 shadow-lg flex flex-col justify-center items-center rounded-xl hover:bg-[#cee5dc] transition-all duration-250 ">
               <i className="text-3xl"></i>
               <h3 className="text-white font-semibold">
-                 {data.sys.sunset}
+                 {data.sys.country}
               </h3>
               <p className="font-medium  text-[#0e2e46]">
                  
-                 SunSet
+                  Country
                 {/* {data.main.feels_like}&deg;C */}
               </p>
             </div>
