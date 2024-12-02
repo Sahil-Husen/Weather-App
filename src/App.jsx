@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import cloud from "../public/cloud.png";
 import Card from "./Components/Card";
 import { IoSearchOutline } from "react-icons/io5";
-import logo from '../public/weather-app.png'
+import logo from "../public/weather-app.png";
 import Loader from "./Components/Loader";
 
 function App() {
-  
   const [input, setInput] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false); // New loading state
@@ -20,7 +19,6 @@ function App() {
       if (coordinates) {
         fetchData(coordinates);
       } else {
-         
         setLoading(false); // Stop loading if location not found
       }
     } catch (error) {
@@ -48,14 +46,14 @@ function App() {
 
   const fetchData = (coord) => {
     const { lat, lon } = coord;
-    const API_KEY =import.meta.env.VITE_API_KEYI;
+    const API_KEY = import.meta.env.VITE_API_KEYI;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        
+
         setLoading(false); // Stop loading after data is fetched
       })
       .catch((error) => {
@@ -64,15 +62,12 @@ function App() {
       });
   };
 
-
-  
-
-
   return (
     <div className="h-screen bg-[#a3d3f7] flex flex-col items-center justify-center">
-      
       <div className="bg-[#3e6b9c] p-5 min-h-96 rounded-lg m-auto w-[30vw]">
-        <h1 className="text-center text-3xl mb-2 text-white font-extrabold font-mono ">Weather App</h1>
+        <h1 className="text-center text-3xl mb-2 text-white font-extrabold font-mono ">
+          Weather App
+        </h1>
         <form
           onSubmit={handleSubmit}
           className="mt-0 flex items-center justify-center rounded-full p-1 bg-white"
@@ -111,13 +106,12 @@ function App() {
                 <p className="text-white">{data.weather[0].description}</p>
               </div>
               <div className="mt-10">
-                <Card data={data}  />
+                <Card data={data} />
               </div>
             </>
           ) : (
             // Default UI
             <div className="flex flex-col items-center justify-center mt-1 ">
-               
               <img
                 src={logo}
                 alt="Cloud icon"
@@ -127,7 +121,6 @@ function App() {
                 <span className="text-5xl">25</span>&deg;C
               </p>
               <p className="text-white">Lucknow</p>
-             
             </div>
           )}
         </div>
