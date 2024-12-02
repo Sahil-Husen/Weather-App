@@ -26,7 +26,7 @@ function Card({ data }) {
     { icon: <CiCloudSun />, id: 5, some: time, howFeel: "Sunrise" },
     { icon: <CiCloudMoon />, id: 6, some: "time", howFeel: "SunSet" },
   ];
-  console.log(data);
+  
   return (
     <div className="flex flex-wrap gap-1 p-2 w-full">
       {data && (

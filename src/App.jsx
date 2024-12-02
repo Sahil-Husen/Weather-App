@@ -20,7 +20,7 @@ function App() {
       if (coordinates) {
         fetchData(coordinates);
       } else {
-        console.error("Location not found");
+         
         setLoading(false); // Stop loading if location not found
       }
     } catch (error) {
@@ -30,7 +30,7 @@ function App() {
   };
 
   const getCoordinates = async (cityName) => {
-    const API_KEY = "d1845658f92b31c64bd94f06f7188c9c";
+    const API_KEY = import.meta.env.VITE_API_KEYI;
     const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     try {
